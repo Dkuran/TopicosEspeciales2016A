@@ -25,9 +25,35 @@
       <h2>{{gemaCtrl.product.nombre}}</h2>
       <p>$ {{gemaCtrl.product.precio}}</p>
       <p>{{gemaCtrl.product.descripcion}}</p>
-      <button ng-show="gemaCtrl.product.compra">Compar</button>
+      <button class="btn btn-primary" ng-show="gemaCtrl.product.compra">Compar</button>
 
     </div>
+
+
+    <div class="list-group-item">
+
+      <h2>{{gemaCtrl.product[0].nombre}}</h2>
+      <p>$ {{gemaCtrl.product[0].precio}}</p>
+      <p>{{gemaCtrl.product[0].descripcion}}</p>
+      <button class="btn btn-primary" ng-show="gemaCtrl.product[0].compra">Compar</button>
+
+    </div>
+
+
+  </div>
+
+
+  <div class="list-group" ng-repeat="producto in gemaCtrl.product">
+
+    <div class="list-group-item">
+
+      <h2>{{producto.nombre}}</h2>
+      <p>$ {{producto.precio}}</p>
+      <p>{{producto.descripcion}}</p>
+      <button class="btn btn-primary" ng-show="producto.compra">Compar</button>
+
+    </div>
+
 
 
   </div>
