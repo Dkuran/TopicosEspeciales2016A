@@ -1,32 +1,37 @@
-<ion-view title="Datos" class=" ">
+
+ <ion-view title="Datos" class=" ">
+
+   <div class="bar bar-header bar-dark">
+     <button class="button button-icon icon ion-arrow-left-a" ui-sref="inicio"></button>
+     <h1 class="title">Gemas</h1>
+
+   </div>
+
+
   <ion-content scroll="false" class="has-header">
     <br>
 
-    <div style=" height: 300px; overflow-y: scroll;">
+    <div style=" height: 500px; overflow-y: scroll;">
 
       <div class="list card" ng-repeat="gema in gemas | orderBy:'-createdAt'" >
 
-          <div class="item item-avatar">
+
+        <div class="list">
+
+          <a class="item item-thumbnail-left" href="#">
             <img ng-src="{{gema.url}}">
             <h2>{{gema.nombre}}</h2>
             <p>{{gema.descripcion}}</p>
-          </div>
-
-          <div class="item item-image">
-            <img ng-src="{{gema.url}}">
-          </div>
-
-          <a class="item item-icon-left assertive" href="#">
-            <i class="icon ion-ribbon-b"></i>
-            Compra Ahora
+            <p>$ {{gema.precio}}</p>
           </a>
+
+
+        </div>
+
 
         </div>
 
       </div>
 
-    <center><button class="button button-balanced" ui-sref="inicio">
-      Atras
-      </button></center>
   </ion-content>
 </ion-view>

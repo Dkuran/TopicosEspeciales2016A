@@ -1,15 +1,35 @@
 <ion-view title="Inicio" class=" ">
+  <div class="bar bar-header bar-dark">
+<!--    <button class="button button-icon icon ion-navicon"></button>-->
+    <h1 class="title">Topicos Especiales</h1>
+  </div>
   <ion-content scroll="false" class="has-header">
-<br>
 
-    <h1>Bienvenidos</h1>
+    <div class="card">
+      <div class="item item-text-wrap">
+        <center> <h1>Temas</h1></center>
 
-    <center><button class="button button-balanced" ui-sref="datos">
-      Datos
-      </button></center>
-    <center><button class="button button-balanced" ui-sref="registro">
-      Registrar
-      </button></center>
+        <ul>
+          <li>Rutas</li>
+          <li>Registrar</li>
+          <li>Cargar Datos</li>
+        </ul>
+      </div>
+      <div class="item item-text-wrap">
+        <center><button class="button button-block button-balanced" ui-sref="datos"><i class="icon ion-ionic"></i>
+          Visualizar
+          </button></center>
+
+      </div>
+      <div class="item item-text-wrap">
+
+        <center><button class="button button-block button-positive" ui-sref="registro"><i class="icon ion-plus"></i>
+          Registrar
+          </button></center>
+
+      </div>
+    </div>
+
 
   </ion-content>
 </ion-view>
