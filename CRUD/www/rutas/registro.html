@@ -1,0 +1,39 @@
+<ion-view title="Registro" class=" ">
+  <ion-content scroll="false" class="has-header">
+    <br>
+
+    <h1>Registro</h1>
+
+    <div class="card">
+      <div class="item item-text-wrap">
+        <form ng-submit="crearGema()">
+
+          <div class="list">
+            <label class="item item-input">
+              <span class="input-label">Nombre</span>
+              <input type="text" ng-model="nuevaGema.nombre">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Precio</span>
+              <input type="number" ng-model="nuevaGema.precio">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Url Imagen</span>
+              <input type="text" ng-model="nuevaGema.url">
+            </label>
+          </div>
+
+          <button class="button button-positive button-block" type="submit">
+            Registrar
+          </button>
+
+        </form>
+      </div>
+    </div>
+
+
+
+
+
+  </ion-content>
+</ion-view>
