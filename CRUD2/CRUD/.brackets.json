@@ -1,0 +1,6 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/Users/Dkuran/Documents/Github/TopicosEspeciales2016A/CRUD/platforms/ios/www/lib/ionic/js/angular-ui/angular-ui-router.min.js",
+        "/Users/Dkuran/Documents/Github/TopicosEspeciales2016A/CRUD/www/factory/registroFactory.js"
+    ]
+}
