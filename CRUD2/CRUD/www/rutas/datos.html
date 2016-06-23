@@ -1,37 +1,40 @@
+<ion-view title="Datos" class=" ">
 
- <ion-view title="Datos" class=" ">
+  <div class="bar bar-header bar-dark">
+    <button class="button button-icon icon ion-arrow-left-a" ui-sref="inicio"></button>
+    <h1 class="title">Gemas</h1>
+    <div class="buttons">
+      <button style="position: right;" class="button button-icon ion-ios-loop-strong" ng-click="listarGemas()"></button>
+      <button style="position: right;" class="button button-icon icon ion-trash-a" ng-click="activar()"></button>
 
-   <div class="bar bar-header bar-dark">
-     <button class="button button-icon icon ion-arrow-left-a" ui-sref="inicio"></button>
-     <h1 class="title">Gemas</h1>
-
-   </div>
-
-
-  <ion-content scroll="false" class="has-header">
-    <br>
-
-    <div style=" height: 500px; overflow-y: scroll;">
-
-      <div class="list card" ng-repeat="gema in gemas | orderBy:'-createdAt'" >
+    </div>
+  </div>
 
 
-        <div class="list">
-
-          <a class="item item-thumbnail-left" href="#">
-            <img ng-src="{{gema.url}}">
-            <h2>{{gema.nombre}}</h2>
-            <p>{{gema.descripcion}}</p>
-            <p>$ {{gema.precio}}</p>
-          </a>
+  <ion-content scroll="true" class="has-header">
 
 
-        </div>
+    <ion-list show-delete="mostrar">
 
 
-        </div>
+      <ion-item ng-repeat="gema in gemas | orderBy:'-createdAt'" class="item-remove-animate" item="gema">
+        <a class="item item-thumbnail-left" href="#/item/{{gema.id}}">
+          <img ng-src="{{gema.url}}">
+          <h2>{{gema.nombre}}</h2>
+          <p>{{gema.descripcion}}</p>
+          <p>$ {{gema.precio | number: 2}}</p>
+        </a>
 
-      </div>
+
+
+
+        <ion-delete-button class="ion-minus-circled" ng-click="eliminarGema(gema, $index)">
+        </ion-delete-button>
+        <ion-option-button class="button-energized" ng-click="irEditar(gema)">
+          Editar
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
 
   </ion-content>
 </ion-view>

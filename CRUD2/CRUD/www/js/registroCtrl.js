@@ -1,43 +1,46 @@
-crude.controller('RegistroCtrl', ['RegistroFactory', '$scope', function (RegistroFactory, $scope) {
+crude.controller('RegistroCtrl', ['RegistroFactory',
+                  '$scope',
+                  '$state',
+                  function (RegistroFactory, $scope, $state) {
 
-  console.log('Controlador de Registro');
+    console.log('Controlador de Registro');
 
-  $scope.nuevaGema = {
+    $scope.nuevaGema = {
 
-    nombre: '',
-    precio: 0.00,
-    descripcion: '',
-    url: ''
+      nombre: '',
+      precio: 0.00,
+      descripcion: '',
+      url: ''
 
-  }
+    }
 
-  //$scope.gemas = [];
+    //$scope.gemas = [];
 
-  $scope.crearGema = function() {
+    $scope.crearGema = function () {
 
-    RegistroFactory.save($scope.nuevaGema).$promise.then(
+      RegistroFactory.save($scope.nuevaGema).$promise.then(
 
-      function (respuesta) {
-        $scope.nuevaGema = {
+        function (respuesta) {
+          $scope.nuevaGema = {
 
-          nombre: '',
-          precio: 0.00,
-          descripcion: '',
-          url: ''
+            nombre: '',
+            precio: 0.00,
+            descripcion: '',
+            url: ''
 
+          }
+
+        },
+        function (error) {
+
+          console.log(error);
         }
-        //$scope.gemas.push(respuesta);
-
-      },
-      function (error) {
-
-        console.log(error);
-      }
 
 
-    );
+      );
+      $state.go('datos');
 
-  };
+    };
 
 
 

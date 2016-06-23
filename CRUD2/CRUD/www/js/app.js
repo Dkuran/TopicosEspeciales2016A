@@ -48,6 +48,17 @@ crude.config(function($stateProvider, $urlRouterProvider){
     templateUrl: 'rutas/registro.html',
     controller: 'RegistroCtrl'
   })
+  .state('item', {
+    url: "/item/:gemaId",
+    templateUrl: 'rutas/gema.html',
+    controller: 'ActualizarCtrl'
+  })
+  .state('edicion', {
+    url: "/edicion/:gemaId",
+    templateUrl: 'rutas/gemaEdicion.html',
+    controller: 'ActualizarCtrl'
+  })
+
 
 
 });
